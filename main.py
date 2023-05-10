@@ -573,18 +573,20 @@ def quitter():
     exit()
 
 while True:
+
     # afficher le menu et demander à l'utilisateur de saisir une option
 
-    print("\nQue souhaitez-vous faire ?")
-    print("1. Ajouter un contact")
-    print("2. Supprimer un contact")
-    print("3. Rechercher un contact par nom")
-    print("4. Rechercher un contact par numéro de téléphone")
-    print("5. Afficher tous les contacts")
-    print("6. Quitter le programme")
-    choix = input("Entrez le numéro de l'option : ")
-    
-    # exécuter l'option choisie
+    print("----------------------------------------------------------------")
+    print("------------------------------Taper 1 pour ajouter des contacts------------------------------")
+    print("-----------------------------Tapez 2 pour supprimer des contacts------------------------------")
+    print("-----------------------------Tapez 3 pour rechercher des contacts------------------------------")
+    print("----------------------------Taper 4 pour afficher tous les contacts------------------------------")
+    print("------------------------------Taper 5 pour quitter le programme------------------------------")
+    print("----------------------------------------------------------------")
+
+    while choix not in ['1', '2', '3', '4', '5', '6']:
+        print("Option invalide. Veuillez réessayer.")
+        choix = input("Veuillez entrer votre choix (1-6): ")
 
     if choix == '1':
         ajouter_contact()
@@ -598,5 +600,4 @@ while True:
         afficher_contacts()
     elif choix == '6':
         quitter()
-    else:
-        print("Option invalide. Veuillez réessayer.")
+
