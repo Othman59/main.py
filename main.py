@@ -447,74 +447,74 @@
 # print(film)
 
 
-# Initialisation de la bibliothèque
-bibliotheque = []
+# # Initialisation de la bibliothèque
+# bibliotheque = []
 
-# Fonction pour ajouter un livre à la bibliothèque
-def ajouter_livre():
-    titre = input("Entrez le titre du livre : ")
-    auteur = input("Entrez le nom de l'auteur : ")
-    bibliotheque[titre] = auteur
-    print("Le livre a été ajouté avec succès.")
+# # Fonction pour ajouter un livre à la bibliothèque
+# def ajouter_livre():
+#     titre = input("Entrez le titre du livre : ")
+#     auteur = input("Entrez le nom de l'auteur : ")
+#     bibliotheque[titre] = auteur
+#     print("Le livre a été ajouté avec succès.")
 
-# Supprimer un livre 
-def supprimer_livre():
-    titre = input("Titre du livre : ")
-    for livre in bibliotheque:
-        if livre["titre"] == titre:
-            bibliotheque.remove(livre)
-            print("Le livre a été supprimé avec succès.")
-            return
-    print("Le livre n'a pas été trouvé.")
+# # Supprimer un livre 
+# def supprimer_livre():
+#     titre = input("Titre du livre : ")
+#     for livre in bibliotheque:
+#         if livre["titre"] == titre:
+#             bibliotheque.remove(livre)
+#             print("Le livre a été supprimé avec succès.")
+#             return
+#     print("Le livre n'a pas été trouvé.")
 
-# Rechercher un livre par titre
-def rechercher_livre():
-    titre = input("Titre du livre : ")
-    for livre in bibliotheque:
-        if livre["titre"] == titre:
-            print(f'Titre: {livre["titre"]}, Auteur: {livre["auteur"]}, Année de publication: {livre["Année"]}')
-            return
-    print("Le livre n'a pas été trouvé.")
+# # Rechercher un livre par titre
+# def rechercher_livre():
+#     titre = input("Titre du livre : ")
+#     for livre in bibliotheque:
+#         if livre["titre"] == titre:
+#             print(f'Titre: {livre["titre"]}, Auteur: {livre["auteur"]}, Année de publication: {livre["Année"]}')
+#             return
+#     print("Le livre n'a pas été trouvé.")
 
-# Afficher tous les livres
-def afficher_livres():
-    if len(bibliotheque) == 0:
-        print("La bibliothèque est vide.")
-    else:
-        for livre in bibliotheque:
-            print(f'Titre: {livre["titre"]}, Auteur: {livre["auteur"]}, Année de publication: {livre["annee"]}')
+# # Afficher tous les livres
+# def afficher_livres():
+#     if len(bibliotheque) == 0:
+#         print("La bibliothèque est vide.")
+#     else:
+#         for livre in bibliotheque:
+#             print(f'Titre: {livre["titre"]}, Auteur: {livre["auteur"]}, Année de publication: {livre["annee"]}')
 
-# Trier les livres par titre
-def trier_livres():
-    bibliotheque.sort(key=lambda x: x["titre"])
-    print("La bibliothèque a été triée avec succès par titre.")
+# # Trier les livres par titre
+# def trier_livres():
+#     bibliotheque.sort(key=lambda x: x["titre"])
+#     print("La bibliothèque a été triée avec succès par titre.")
 
-# Menu principal
-while True:
-    print("""
-    1. Ajouter un livre à la bibliothèque
-    2. Supprimer un livre de la bibliothèque
-    3. Rechercher un livre par titre
-    4. Afficher tous les livres
-    5. Trier les livres par titre
-    6. Quitter
-    """)
-    choix = input("Entrez votre choix : ")
-    if choix == "1":
-        ajouter_livre()
-    elif choix == "2":
-        supprimer_livre()
-    elif choix == "3":
-        rechercher_livre()
-    elif choix == "4":
-        afficher_livres()
-    elif choix == "5":
-        trier_livres()
-    elif choix == "6":
-        print("Au revoir !")
-        break
-    else:
-        print("Choix invalide. Veuillez réessayer.")        
+# # Menu principal
+# while True:
+#     print("""
+#     1. Ajouter un livre à la bibliothèque
+#     2. Supprimer un livre de la bibliothèque
+#     3. Rechercher un livre par titre
+#     4. Afficher tous les livres
+#     5. Trier les livres par titre
+#     6. Quitter
+#     """)
+#     choix = input("Entrez votre choix : ")
+#     if choix == "1":
+#         ajouter_livre()
+#     elif choix == "2":
+#         supprimer_livre()
+#     elif choix == "3":
+#         rechercher_livre()
+#     elif choix == "4":
+#         afficher_livres()
+#     elif choix == "5":
+#         trier_livres()
+#     elif choix == "6":
+#         print("Au revoir !")
+#         break
+#     else:
+#         print("Choix invalide. Veuillez réessayer.")        
 
 
 
@@ -526,17 +526,16 @@ while True:
 contact = [] #initialisation de la liste des contacts
 
 def ajouter_contact():
-    nom = input("Entrez le nom du contact :")
-    tel = input("Entrez lle numéro de télephone :")
-    contact = (nom, tel) # créer une collections de données pour stocker le nom et le numéro de téléphone 
-    contact.append(contact) # ajouter le tuple à la liste des contacts
+    nom = input("Entrez le nom du contact : ")
+    tel = input("Entrez le numéro de téléphone : ")
+    contact = (nom, tel) # créer un tuple pour stocker le nom et le numéro de téléphone
     print("Le contact a été ajouté avec succès.")
 
 def supprimer_contact():
     nom = input("Entrez le nom du contact à supprimer : ")
-    for contact in contacts:
+    for contact in contact:
         if contact[0] == nom: # si le nom du contact est trouvé
-            contacts.remove(contact) # supprimer le contact de la liste
+            contact.remove(contact) # supprimer le contact de la liste
             print("Le contact a été supprimé avec succès.")
             return
     print("Le contact n'a pas été trouvé.")
@@ -544,7 +543,7 @@ def supprimer_contact():
 def rechercher_contact_par_nom():
     nom = input("Entrez le nom du contact à rechercher : ")
     found = False
-    for contact in contacts:
+    for contact in contact:
         if contact[0] == nom: # si le nom du contact est trouvé
             print("Nom :", contact[0], " Numéro de téléphone :", contact[1])
             found = True
@@ -554,7 +553,7 @@ def rechercher_contact_par_nom():
 def rechercher_contact_par_tel():
     tel = input("Entrez le numéro de téléphone du contact à rechercher : ")
     found = False
-    for contact in contacts:
+    for contact in contact:
         if contact[1] == tel: # si le numéro de téléphone du contact est trouvé
             print("Nom :", contact[0], " Numéro de téléphone :", contact[1])
             found = True
