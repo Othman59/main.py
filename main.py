@@ -599,3 +599,5 @@ while True:
         quitter()
     else:
         print("Option invalide. Veuillez réessayer.")
+
+
